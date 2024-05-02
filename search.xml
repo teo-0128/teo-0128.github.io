@@ -47,7 +47,7 @@
 <span id="more"></span>
 
 <p><em>部分图片来自网课，水印存在本人信息，所以进行了一定程度的打码，个人学习使用，侵删。</em></p>
-<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="前置"><a href="#前置" class="headerlink" title="前置"></a>前置</h3><p><a href="https://zhuanlan.zhihu.com/p/354400717">c语言vscode环境配置</a><br><a href="https://blog.csdn.net/qq_39621009/article/details/122817826">修改cmd控制台默认代码页编码的几种方法【GBK、UTF-8】</a><code>utf-8:chcp 65001;gbk:chcp 936</code></p>
+<h3 id="前置"><a href="#前置" class="headerlink" title="前置"></a>前置</h3><p><a href="https://zhuanlan.zhihu.com/p/354400717">c语言vscode环境配置</a><br><a href="https://blog.csdn.net/qq_39621009/article/details/122817826">修改cmd控制台默认代码页编码的几种方法【GBK、UTF-8】</a><code>utf-8:chcp 65001;gbk:chcp 936</code></p>
 <p>资料：<br><a href="https://wangdoc.com/clang/">C 语言教程 - 网道</a></p>
 <h3 id="构成"><a href="#构成" class="headerlink" title="构成"></a>构成</h3><p>标识符命名规范<br><img src="/../images/C%E8%AF%AD%E8%A8%80%E7%AC%94%E8%AE%B0-%E5%9F%BA%E7%A1%80/17118702744255.jpg"></p>
 <p>常量和变量<br><img src="/../images/C%E8%AF%AD%E8%A8%80%E7%AC%94%E8%AE%B0-%E5%9F%BA%E7%A1%80/17118723671242.jpg"></p>
