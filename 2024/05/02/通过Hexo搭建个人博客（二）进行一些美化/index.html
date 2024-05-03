@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 7.2.0">
+  
+  <!--pjax：防止跳转页面音乐暂停-->
+  <script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -17,7 +21,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"monochrommmme.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"monochrommmme.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="对单调的blog页面添加一些组件，进行一些美化">
@@ -28,7 +32,7 @@
 <meta property="og:description" content="对单调的blog页面添加一些组件，进行一些美化">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-05-02T11:49:36.000Z">
-<meta property="article:modified_time" content="2024-05-03T09:29:47.797Z">
+<meta property="article:modified_time" content="2024-05-03T12:23:34.397Z">
 <meta property="article:author" content="monoch-">
 <meta property="article:tag" content="折腾">
 <meta property="article:tag" content="Hexo">
@@ -81,6 +85,29 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
+
+<!-- 引用依赖 -->
+<link rel="stylesheet" 
+  href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>
+
+<!-- APlayer本体 -->
+<div class="aplayer" 
+  data-id="8885348672" 
+  data-server="netease" 
+  data-type="playlist" 
+  data-fixed="true"
+  data-autoplay="false" 
+  data-order="random" 
+  data-volume="0.55" 
+  data-theme="#cc543a" 
+  data-preload="auto" >
+  </div>
+<!--如果将本体放在body里面导致页面加载出现问题，请尝试放到body体后面-->
+
+
+
   <div class="container use-motion">
     <div class="headband"></div>
 
@@ -227,7 +254,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-05-03 17:29:47" itemprop="dateModified" datetime="2024-05-03T17:29:47+08:00">2024-05-03</time>
+                <time title="修改时间：2024-05-03 20:23:34" itemprop="dateModified" datetime="2024-05-03T20:23:34+08:00">2024-05-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -245,14 +272,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.9k</span>
+              <span>4.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>5 分钟</span>
+              <span>8 分钟</span>
             </span>
 
         </div>
@@ -278,7 +305,7 @@
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">monoch-space</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="attr">keywords:</span> </span><br><span class="line"><span class="attr">author:</span> <span class="string">monoch-</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span></span><br><span class="line"><span class="attr">timezone:</span> <span class="string">&#x27;Asia/Shanghai&#x27;</span></span><br></pre></td></tr></table></figure>
 
 <p>next提供了四种主题以及深色模式的选择。<em>第三第四个主题的区别是边框的显著与否吧，大概</em></p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Schemes</span></span><br><span class="line"><span class="comment">#scheme: Muse</span></span><br><span class="line"><span class="attr">scheme:</span> <span class="string">Mist</span></span><br><span class="line"><span class="comment">#scheme: Pisces</span></span><br><span class="line"><span class="comment">#scheme: Gemini</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Dark Mode</span></span><br><span class="line"><span class="attr">darkmode:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Schemes</span></span><br><span class="line"><span class="comment">#scheme: Muse</span></span><br><span class="line"><span class="comment">#scheme: Mist</span></span><br><span class="line"><span class="comment">#scheme: Pisces</span></span><br><span class="line"><span class="attr">scheme:</span> <span class="string">Gemini</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Dark Mode</span></span><br><span class="line"><span class="attr">darkmode:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="拓展菜单"><a href="#拓展菜单" class="headerlink" title="拓展菜单"></a>拓展菜单</h3><p>例如想添加tags,categories和about的菜单，则对_Config.next.yml进行编辑：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line">  <span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line">  <span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line">  <span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span></span><br><span class="line">  <span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line">  <span class="comment">#schedule: /schedule/ || fa fa-calendar</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || fa fa-sitemap</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || fa fa-heartbeat</span></span><br></pre></td></tr></table></figure>
@@ -314,8 +341,19 @@
 <h3 id="右上角github横幅"><a href="#右上角github横幅" class="headerlink" title="右上角github横幅"></a>右上角github横幅</h3><p>对_config.next.yml进行编辑：</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># `Follow me on GitHub` banner in the top-right corner.</span></span><br><span class="line"><span class="attr">github_banner:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">permalink:</span> <span class="string">https://github.com/monochrommmme</span></span><br><span class="line">  <span class="attr">title:</span> <span class="string">Follow</span> <span class="string">me</span> <span class="string">on</span> <span class="string">GitHub</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="使用APlayer插件实现全局bgm播放"><a href="#使用APlayer插件实现全局bgm播放" class="headerlink" title="使用APlayer插件实现全局bgm播放"></a>使用APlayer插件实现全局bgm播放</h3><p>参考：<a target="_blank" rel="noopener" href="https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md"><strong>APlayer中文文档</strong></a>,<a target="_blank" rel="noopener" href="https://hakurei.red/2019/11/25/%E4%B8%BAHexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E5%85%A8%E5%B1%80APlayer%E6%92%AD%E6%94%BE%E5%99%A8/#APlayer"><strong>为Hexo博客添加全局APlayer播放器</strong></a></p>
+<h3 id="使用APlayer和pjax插件实现全局音乐播放"><a href="#使用APlayer和pjax插件实现全局音乐播放" class="headerlink" title="使用APlayer和pjax插件实现全局音乐播放"></a>使用APlayer和pjax插件实现全局音乐播放</h3><p>参考：<a target="_blank" rel="noopener" href="https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md"><strong>APlayer中文文档</strong></a>，<a target="_blank" rel="noopener" href="https://github.com/theme-next/theme-next-pjax"><strong>hexo-next-pjax文档</strong></a>，<a target="_blank" rel="noopener" href="https://hakurei.red/2019/11/25/%E4%B8%BAHexo%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E5%85%A8%E5%B1%80APlayer%E6%92%AD%E6%94%BE%E5%99%A8/#APlayer"><strong>为Hexo博客添加全局APlayer播放器</strong></a></p>
 <p>安装APlayer插件<br><code>npm install --save hexo-tag-aplayer</code></p>
+<p>打开blog&#x2F;themes&#x2F;next&#x2F;layout&#x2F;_layout.swig，添加</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 引用依赖 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> </span></span><br><span class="line"><span class="tag">  <span class="attr">href</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- APlayer本体 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;aplayer&quot;</span> </span></span><br><span class="line"><span class="tag">  <span class="attr">data-id</span>=<span class="string">&quot;8885348672&quot;</span> </span></span><br><span class="line"><span class="tag">  <span class="attr">data-server</span>=<span class="string">&quot;netease&quot;</span> </span></span><br><span class="line"><span class="tag">  <span class="attr">data-type</span>=<span class="string">&quot;playlist&quot;</span> </span></span><br><span class="line"><span class="tag">  <span class="attr">data-fixed</span>=<span class="string">&quot;true&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">data-autoplay</span>=<span class="string">&quot;false&quot;</span> </span></span><br><span class="line"><span class="tag">  <span class="attr">data-order</span>=<span class="string">&quot;random&quot;</span> </span></span><br><span class="line"><span class="tag">  <span class="attr">data-volume</span>=<span class="string">&quot;0.55&quot;</span> </span></span><br><span class="line"><span class="tag">  <span class="attr">data-theme</span>=<span class="string">&quot;#cc543a&quot;</span> </span></span><br><span class="line"><span class="tag">  <span class="attr">data-preload</span>=<span class="string">&quot;auto&quot;</span> &gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>安装pjax插件<br><code>$ git clone https://github.com/theme-next/theme-next-pjax source/lib/pjax</code></p>
+<p>编辑_config.next.yml</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">pjax:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>对blog\themes\next\layout_partials\head\head.swig进行编辑：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1, maximum-scale=2&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;theme-color&quot;</span> <span class="attr">content</span>=<span class="string">&quot;&#123;&#123; theme.android_chrome_color &#125;&#125;&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;generator&quot;</span> <span class="attr">content</span>=<span class="string">&quot;Hexo &#123;&#123; hexo_version &#125;&#125;&quot;</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">&lt;!--pjax：防止跳转页面音乐暂停--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 之所以不部署在_layout.swig是因为试过之后，对某篇文章进行刷新会进入html源代码界面，很神秘 --&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>更新pjax的方法<br><code>$ cd themes/next/source/lib/pjax</code><br><code>$ git pull</code></p>
 
     </div>
 
@@ -414,7 +452,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="nav-number">1.</span> <span class="nav-text">设置基本信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%93%E5%B1%95%E8%8F%9C%E5%8D%95"><span class="nav-number">2.</span> <span class="nav-text">拓展菜单</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD"><span class="nav-number">3.</span> <span class="nav-text">搜索功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%BA%E7%AB%99%E6%97%B6%E9%97%B4"><span class="nav-number">4.</span> <span class="nav-text">建站时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E7%AB%A0%E6%9C%AB%E5%B0%BE%E7%89%88%E6%9D%83%E5%A3%B0%E6%98%8E"><span class="nav-number">5.</span> <span class="nav-text">文章末尾版权声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E7%AB%A0%E5%AD%97%E6%95%B0%E5%92%8C%E9%98%85%E8%AF%BB%E6%97%B6%E9%97%B4"><span class="nav-number">6.</span> <span class="nav-text">文章字数和阅读时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%B3%E4%B8%8A%E8%A7%92github%E6%A8%AA%E5%B9%85"><span class="nav-number">7.</span> <span class="nav-text">右上角github横幅</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8APlayer%E6%8F%92%E4%BB%B6%E5%AE%9E%E7%8E%B0%E5%85%A8%E5%B1%80bgm%E6%92%AD%E6%94%BE"><span class="nav-number">8.</span> <span class="nav-text">使用APlayer插件实现全局bgm播放</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="nav-number">1.</span> <span class="nav-text">设置基本信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%93%E5%B1%95%E8%8F%9C%E5%8D%95"><span class="nav-number">2.</span> <span class="nav-text">拓展菜单</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD"><span class="nav-number">3.</span> <span class="nav-text">搜索功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%BA%E7%AB%99%E6%97%B6%E9%97%B4"><span class="nav-number">4.</span> <span class="nav-text">建站时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E7%AB%A0%E6%9C%AB%E5%B0%BE%E7%89%88%E6%9D%83%E5%A3%B0%E6%98%8E"><span class="nav-number">5.</span> <span class="nav-text">文章末尾版权声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E7%AB%A0%E5%AD%97%E6%95%B0%E5%92%8C%E9%98%85%E8%AF%BB%E6%97%B6%E9%97%B4"><span class="nav-number">6.</span> <span class="nav-text">文章字数和阅读时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%B3%E4%B8%8A%E8%A7%92github%E6%A8%AA%E5%B9%85"><span class="nav-number">7.</span> <span class="nav-text">右上角github横幅</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8APlayer%E5%92%8Cpjax%E6%8F%92%E4%BB%B6%E5%AE%9E%E7%8E%B0%E5%85%A8%E5%B1%80%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE"><span class="nav-number">8.</span> <span class="nav-text">使用APlayer和pjax插件实现全局音乐播放</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -480,14 +518,14 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">12k</span>
+    <span title="站点总字数">13k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">21 分钟</span>
+    <span title="站点阅读时长">24 分钟</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
         
@@ -505,6 +543,7 @@
 
   
   <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -513,10 +552,69 @@
 <script src="/js/motion.js"></script>
 
 
-<script src="/js/schemes/muse.js"></script>
+<script src="/js/schemes/pisces.js"></script>
 
 
 <script src="/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
 
 
 
@@ -541,9 +639,12 @@
 
 
 
+    <div id="pjax">
   
 
   
+
+    </div>
 
 </body>
 </html>
