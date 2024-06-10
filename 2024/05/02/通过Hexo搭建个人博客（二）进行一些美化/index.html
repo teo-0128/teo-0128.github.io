@@ -32,7 +32,7 @@
 <meta property="og:description" content="对单调的blog页面添加一些组件，进行一些美化。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-05-02T11:49:36.000Z">
-<meta property="article:modified_time" content="2024-06-10T12:11:14.255Z">
+<meta property="article:modified_time" content="2024-06-10T12:16:09.889Z">
 <meta property="article:author" content="monoch-">
 <meta property="article:tag" content="折腾">
 <meta property="article:tag" content="Hexo">
@@ -255,7 +255,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-06-10 20:11:14" itemprop="dateModified" datetime="2024-06-10T20:11:14+08:00">2024-06-10</time>
+                <time title="修改时间：2024-06-10 20:16:09" itemprop="dateModified" datetime="2024-06-10T20:16:09+08:00">2024-06-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -708,13 +708,22 @@ var options = {
   backgroundColor: 'transparent',
   buttonColorDark: '#100f2c',
   buttonColorLight: '#fff',
-  saveInCookies: true,
+  saveInCookies: false,
   label: '🌓',
-  autoMatchOsTheme: true
+  autoMatchOsTheme: false
 }
 const darkmode = new Darkmode(options);
 window.darkmode = darkmode;
 darkmode.showWidget();
+if (window.darkmode && !window.darkmode.isActivated()) {
+  window.darkmode.toggle();
+  var toggleButtons = document.getElementsByClassName("darkmode-toggle");
+  if (toggleButtons && toggleButtons.length > 0) {
+    for (i = 0; i < toggleButtons.length; i++) {
+      toggleButtons[i].classList.add("darkmode-toggle--white");
+    }
+  }
+}
 </script>
 
     </div>
