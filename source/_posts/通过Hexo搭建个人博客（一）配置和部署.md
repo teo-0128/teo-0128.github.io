@@ -30,8 +30,21 @@ git初始化
 
 在github中创建新的资源库，并将repository name改成`你的用户名.github.io`，使得最后repository页面网址为`https://github.com/用户名/用户名.github.io`的形式；将id_rsa.pub的内容拷贝到Settings的SSH keys里
 
+
+`git init`
+`git add .`
+`git branch -M main`
 `git remote add origin git@github.com:用户名/用户名.github.io.git`
 `git pull origin master`
+
+
+echo "# teo-0128.github.io" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:teo-0128/teo-0128.github.io.git
+git push -u origin main
 
 验证
 `ssh -T git@github.com`
