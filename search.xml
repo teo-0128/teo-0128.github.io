@@ -26,47 +26,6 @@
       </tags>
   </entry>
   <entry>
-    <title>通过Hexo搭建个人博客（一）下载和部署</title>
-    <url>/2024/04/27/%E9%80%9A%E8%BF%87Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%B8%80%EF%BC%89%E9%85%8D%E7%BD%AE%E5%92%8C%E9%83%A8%E7%BD%B2/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>手之痒</p>
-<span id="more"></span>
-
-<hr>
-<p>参考材料：<a href="https://hexo.io/zh-cn/docs/"><strong>Hexo文档</strong></a>；<a href="https://zhuanlan.zhihu.com/p/102592286"><strong>从零开始搭建个人博客（超详细）</strong></a>；<a href="https://zhuanlan.zhihu.com/p/618864711"><strong>Hexo+Next主题搭建个人博客+优化全过程（完整详细版）</strong></a></p>
-<hr>
-<h2 id="前置"><a href="#前置" class="headerlink" title="前置"></a>前置</h2><p>首先下载和配置<a href="https://git-scm.com/"><strong>git</strong></a>和<a href="https://nodejs.cn/"><strong>Nodejs</strong></a>的环境</p>
-<p>Nodejs在可能需要管理员权限才能使用npm工具，遇到问题可以参考<a href="https://blog.csdn.net/mr__sun__/article/details/119140624"><strong>Windows下使用npm显示权限不够</strong></a>修改nodejs文件夹Users权限，或以管理员身份打开windows powershell到指定文件夹再操作；npm下载不更换国内镜像源的话可能需要科学上网</p>
-<h2 id="绑定GitHub"><a href="#绑定GitHub" class="headerlink" title="绑定GitHub"></a>绑定GitHub</h2><p>git初始化<br><code>cd [folder]</code><br><code>git init</code></p>
-<p>在github中创建新的资源库，并将repository name改成<code>你的用户名.github.io</code>，使得最后repository页面网址为<code>https://github.com/用户名/用户名.github.io</code>的形式；将id_rsa.pub的内容拷贝到Settings的SSH keys里</p>
-<p><code>git add .</code><br><code>git branch -M main</code><br><code>git remote add origin git@github.com:用户名/用户名.github.io.git</code><br><code>git pull -u origin main</code></p>
-<p>验证<br><code>ssh -T git@github.com</code></p>
-<p>某些加速器可能会导致git pull失败，关闭即可。或者可以尝试不用ssh使用https路径</p>
-<h2 id="配置Hexo"><a href="#配置Hexo" class="headerlink" title="配置Hexo"></a>配置Hexo</h2><p>安装Hexo<br><code>cd [folder]</code><br><code>npm install -g hexo-cli</code><br><em>本命令相当于执行了以下几步：<br><code>git clone hexo-starter</code>和<code>hexo-theme-landscape</code>主题到当前目或指定目录。<br>使用Yarn 1、pnpm 或npm包管理器下载依赖（如有已安装多个，则在前面的优先）。npm 默认随 Node.js 安装。</em></p>
-<p>检查npm下载<br><code>npm list -g --depth=0</code></p>
-<p>初始化<br><code>hexo init [folder]</code><br><code>cd [folder]</code><br><code>npm install</code><br>生成的文件中</p>
-<ul>
-<li>_config.yml 可以在此配置网站大部分参数</li>
-<li>package.json 记录了Hexo的插件信息</li>
-<li>scaffolds Hexo会根据scaffold中的模板创建文件</li>
-<li>source 存放用户的各种资源，如markdown文章、媒体资源等</li>
-<li>themes Hexo会根据主题来生成静态页面</li>
-<li>node_modules 依赖包下载的位置</li>
-</ul>
-<p>编辑根目录下_config.yml</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:你的用户名/你的用户名.github.io.git</span>  <span class="comment">#仓库地址</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span>  <span class="comment">#git下branch的名字，老版本是master</span></span><br></pre></td></tr></table></figure>
-
-<p>输入指令<br><code>hexo clean</code> 用于清除缓存文件 (db.json) 和已生成的静态文件 (public)<br><code>hexo generate</code>或<code>hexo g</code> 生成静态文件<br><code>hexo server</code>或<code>hexo s</code> 启动本地服务器，默认情况下的网址为”localhost:4000”<br>这时就能离线查看网站的样子了</p>
-<p>安装部署插件hexo-deployer-git<br><code>npm install hexo-deployer-git --save</code><br><code>hexo deploy</code>或<code>hexo d</code> 用于部署网站，构建在GitHub的服务器中</p>
-<hr>
-]]></content>
-      <categories>
-        <category>杂</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>通过Hexo搭建个人博客（二）进行一些美化</title>
     <url>/2024/05/02/%E9%80%9A%E8%BF%87Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%BA%8C%EF%BC%89%E8%BF%9B%E8%A1%8C%E4%B8%80%E4%BA%9B%E7%BE%8E%E5%8C%96/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>添加了一堆组件，总之先记录下来免得以后找不到路</p>
@@ -152,6 +111,48 @@
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1, maximum-scale=2&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;theme-color&quot;</span> <span class="attr">content</span>=<span class="string">&quot;&#123;&#123; theme.android_chrome_color &#125;&#125;&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;generator&quot;</span> <span class="attr">content</span>=<span class="string">&quot;Hexo &#123;&#123; hexo_version &#125;&#125;&quot;</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">&lt;!--pjax：防止跳转页面音乐暂停--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>更新pjax的方法<br><code>$ cd themes/next/source/lib/pjax</code><br><code>$ git pull</code></p>
+<hr>
+]]></content>
+      <categories>
+        <category>杂</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>通过Hexo搭建个人博客（一）下载和部署</title>
+    <url>/2024/04/27/%E9%80%9A%E8%BF%87Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%B8%80%EF%BC%89%E9%85%8D%E7%BD%AE%E5%92%8C%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>手之痒</p>
+<span id="more"></span>
+
+<hr>
+<p>参考材料：<a href="https://hexo.io/zh-cn/docs/"><strong>Hexo文档</strong></a>；<a href="https://zhuanlan.zhihu.com/p/102592286"><strong>从零开始搭建个人博客（超详细）</strong></a>；<a href="https://zhuanlan.zhihu.com/p/618864711"><strong>Hexo+Next主题搭建个人博客+优化全过程（完整详细版）</strong></a></p>
+<hr>
+<h2 id="前置"><a href="#前置" class="headerlink" title="前置"></a>前置</h2><p>首先下载和配置<a href="https://git-scm.com/"><strong>git</strong></a>和<a href="https://nodejs.cn/"><strong>Nodejs</strong></a>的环境</p>
+<p>Nodejs在可能需要管理员权限才能使用npm工具，遇到问题可以参考<a href="https://blog.csdn.net/mr__sun__/article/details/119140624"><strong>Windows下使用npm显示权限不够</strong></a>修改nodejs文件夹Users权限，或以管理员身份打开windows powershell到指定文件夹再操作；npm下载不更换国内镜像源的话可能需要科学上网</p>
+<h2 id="绑定GitHub"><a href="#绑定GitHub" class="headerlink" title="绑定GitHub"></a>绑定GitHub</h2><p>git初始化<br><code>cd [folder]</code><br><code>git init</code></p>
+<p>在github中创建新的资源库，并将repository name改成<code>你的用户名.github.io</code>，使得最后repository页面网址为<code>https://github.com/用户名/用户名.github.io</code>的形式；将id_rsa.pub的内容拷贝到Settings的SSH keys里</p>
+<p><code>git add .</code><br><code>git branch -M main</code><br><code>git remote add origin git@github.com:用户名/用户名.github.io.git</code><br><code>git pull -u origin main</code></p>
+<p>验证<br><code>ssh -T git@github.com</code></p>
+<p>某些加速器可能会导致git pull失败，关闭即可。或者可以尝试不用ssh使用https路径</p>
+<p>将repository设置为公开，进入setting找到pages，将source从none改为main</p>
+<h2 id="配置Hexo"><a href="#配置Hexo" class="headerlink" title="配置Hexo"></a>配置Hexo</h2><p>安装Hexo<br><code>cd [folder]</code><br><code>npm install -g hexo-cli</code><br><em>本命令相当于执行了以下几步：<br><code>git clone hexo-starter</code>和<code>hexo-theme-landscape</code>主题到当前目或指定目录。<br>使用Yarn 1、pnpm 或npm包管理器下载依赖（如有已安装多个，则在前面的优先）。npm 默认随 Node.js 安装。</em></p>
+<p>检查npm下载<br><code>npm list -g --depth=0</code></p>
+<p>初始化<br><code>hexo init [folder]</code><br><code>cd [folder]</code><br><code>npm install</code><br>生成的文件中</p>
+<ul>
+<li>_config.yml 可以在此配置网站大部分参数</li>
+<li>package.json 记录了Hexo的插件信息</li>
+<li>scaffolds Hexo会根据scaffold中的模板创建文件</li>
+<li>source 存放用户的各种资源，如markdown文章、媒体资源等</li>
+<li>themes Hexo会根据主题来生成静态页面</li>
+<li>node_modules 依赖包下载的位置</li>
+</ul>
+<p>编辑根目录下_config.yml</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:你的用户名/你的用户名.github.io.git</span>  <span class="comment">#仓库地址</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span>  <span class="comment">#git下branch的名字，老版本是master</span></span><br></pre></td></tr></table></figure>
+
+<p>输入指令<br><code>hexo clean</code> 用于清除缓存文件 (db.json) 和已生成的静态文件 (public)<br><code>hexo generate</code>或<code>hexo g</code> 生成静态文件<br><code>hexo server</code>或<code>hexo s</code> 启动本地服务器，默认情况下的网址为”localhost:4000”<br>这时就能离线查看网站的样子了</p>
+<p>安装部署插件hexo-deployer-git<br><code>npm install hexo-deployer-git --save</code><br><code>hexo deploy</code>或<code>hexo d</code> 用于部署网站，构建在GitHub的服务器中</p>
 <hr>
 ]]></content>
       <categories>
